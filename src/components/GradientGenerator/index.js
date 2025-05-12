@@ -31,6 +31,7 @@ class GredientGenerator extends Component {
   onChangeFirstColor = event => {
     this.setState({firstColorValue: event.target.value})
   }
+
   onChangeSecondColor = event => {
     this.setState({secondColorvalue: event.target.value})
   }
@@ -70,16 +71,14 @@ class GredientGenerator extends Component {
           <Heading>Generate a CSS Color Gradient</Heading>
           <Text>Choose Direction</Text>
           <UnorderList>
-            {gradientDirectionsList.map(item => {
-              return (
-                <GradientDirectionItem
-                  key={item.directionId}
-                  activeDirectionId={activeDirectionId}
-                  onChangeDirection={this.onChangeDirection}
-                  item={item}
-                />
-              )
-            })}
+            {gradientDirectionsList.map(item => (
+              <GradientDirectionItem
+                key={item.directionId}
+                activeDirectionId={activeDirectionId}
+                onChangeDirection={this.onChangeDirection}
+                item={item}
+              />
+            ))}
           </UnorderList>
           <Text>Pick The Colors</Text>
           <Container width="500px" flex row justifySpaceBetween>

@@ -8,13 +8,13 @@ export const ListItem = styled.li`
   list-style-type: none;
 `
 export const Button = styled.button`
-  border:none;
+  border: none;
   background-color: transparent;
-  outline:none;
+  outline: none;
   font-size: 15px;
   color: #1e293b;
   padding: 20px 40px;
   opacity: ${props => (props.active === 'white' ? 1 : 0.5)};
   font-family: 'Roboto';
-  cursor:pointer;
+  cursor: pointer;
 `

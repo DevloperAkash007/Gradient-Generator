@@ -3,8 +3,11 @@ import styled from 'styled-components'
 export const AppContainer = styled.div`
   min-height: 100vh;
   padding: 10px;
-  background-image: linear-gradient(to ${props => props.direction},${props =>
-    props.firstColor}, ${props => props.secondColor});
+  background-image: linear-gradient(
+    to ${props => props.direction},
+    ${props => props.firstColor},
+    ${props => props.secondColor}
+  );
 `
 export const MainContainer = styled.div`
   width: 90%;
@@ -18,6 +21,7 @@ export const Heading = styled.h1`
   font-family: 'Roboto';
   font-weight: 900;
   color: #ffffff;
+  text-align: center;
 `
 export const Text = styled.p`
   font-size: 30px;
@@ -28,7 +32,7 @@ export const Text = styled.p`
 `
 export const UnorderList = styled.ul`
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: center;
   padding: 0px;
   flex-wrap: wrap;
@@ -44,6 +48,7 @@ export const Container = styled.div`
     if (props.column) {
       return 'column'
     }
+    return 'null'
   }};
   justify-content: ${props => {
     if (props.justifyStart) {
@@ -58,6 +63,7 @@ export const Container = styled.div`
     if (props.justifySpaceBetween) {
       return 'space-between'
     }
+    return 'null'
   }};
   align-items: ${props => {
     if (props.alignStart) {
@@ -69,7 +75,11 @@ export const Container = styled.div`
     if (props.alignCenter) {
       return 'center'
     }
+    return 'null'
   }};
+  @media screen and (max-width: 767px) {
+    width: 350px;
+  }
 `
 
 export const Input = styled.input`
